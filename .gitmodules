@@ -1,0 +1,3 @@
+[submodule "Cores-SweRV"]
+	path = Cores-SweRV
+	url = https://github.com/chipsalliance/Cores-SweRV
