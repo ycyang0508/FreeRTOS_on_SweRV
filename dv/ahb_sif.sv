@@ -96,8 +96,7 @@ function automatic AHBResult_t genWriteData(input AHBCmd_t ahbCmdIn);
     wrByteSel = write_addr[2:0];
     case(ahbCmd.HSIZE)
     HSIZE_B8://byte write
-    begin                
-        
+    begin                        
         tb_top.mem[write_addr] = ahbCmd.HWDATA[8*wrByteSel +: 8];
     end
     HSIZE_B16://2 bytes write
@@ -139,7 +138,7 @@ function automatic logic [63:0] genReadData(input AHBCmd_t ahbCmd);
     read_addr = ahbCmd.HADDR[27:0];
     rdatGen = 'd0;
 
-    case(HSIZE)
+    case(ahbCmd.HSIZE)
     HSIZE_B8://byte write
     begin                
         byteSel = read_addr[2:0];
